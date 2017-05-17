@@ -40,5 +40,7 @@ module.exports = {
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({ names: ['vendor', 'manifest'] }),
     new HTMLWebpackPlugin({ template: 'src/index.html' }),
+    // No longer needed, Webpack 2 does this automatically with -p
+    // new webpack.DefinePlugin({'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)}),
   ],
 };
